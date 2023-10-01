@@ -28,7 +28,7 @@ export const BasicLayout: React.FC<React.PropsWithChildren> = ({
       <Layout.Content className={styles.content}>{children}</Layout.Content>
 
       <Layout.Footer>
-        {/* TODO: slot for future footer content */}
+        {/* NOTE: slot for future footer content */}
       </Layout.Footer>
     </Layout>
   );

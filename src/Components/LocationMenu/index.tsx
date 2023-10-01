@@ -13,6 +13,7 @@ export const LocationMenu: React.FC = () => {
 
   const onClick: MenuProps["onClick"] = ({ key }) => {
     if (!isLocationEnum(key)) return;
+
     dispatch(getLocationCoordinatesThunk(key));
   };
 
@@ -22,7 +23,6 @@ export const LocationMenu: React.FC = () => {
       items={locationMenuItems}
       selectedKeys={[selected]}
       onClick={onClick}
-      style={{ width: "400px" }}
-    ></Menu>
+    />
   );
 };

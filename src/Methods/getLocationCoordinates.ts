@@ -12,7 +12,6 @@ export const getLocationCoordinates = async (
     case LocationEnum.Rostov:
       return [57.1914, 39.4139];
     case LocationEnum.CurrentLocation:
-      // TODO: get actual location
       return await getMyPosition();
     default:
       return [55.7522, 37.6156];

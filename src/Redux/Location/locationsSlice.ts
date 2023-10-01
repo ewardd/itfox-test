@@ -17,9 +17,7 @@ const initialState: ILocationState = {
 
 export const getLocationCoordinatesThunk = createAsyncThunk(
   "getLocationCoordinatesThunk",
-  async (payload: LocationEnum) => {
-    return await getLocationCoordinates(payload);
-  }
+  async (payload: LocationEnum) => getLocationCoordinates(payload)
 );
 
 const locationSlice = createSlice({

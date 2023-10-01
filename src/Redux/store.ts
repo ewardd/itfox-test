@@ -6,10 +6,10 @@ import { authReducer } from "./Auth/authSlice";
 
 export const store = configureStore({
   reducer: {
+    auth: authReducer,
     location: locationReducer,
     [weatherApi.reducerPath]: weatherApi.reducer,
     [locationNameApi.reducerPath]: locationNameApi.reducer,
-    auth: authReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(

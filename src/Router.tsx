@@ -7,6 +7,7 @@ import { useAppSelector } from "./Hooks/redux";
 
 export const BasicRouter: React.FC = () => {
   const isAuthenticated = useAppSelector((store) => store.auth.isAuthenticated);
+
   return (
     <BasicLayout>
       <Routes>
