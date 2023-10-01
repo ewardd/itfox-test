@@ -1,0 +1,43 @@
+.wrapper {
+  height: fit-content;
+  background-color: #bae0ff;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.description {
+  display: flex;
+  align-items: center;
+}
+
+.cityName {
+  display: flex;
+  justify-content: center;
+}
+
+.nameDivider {
+  margin-bottom: 0px;
+}
+
+.weatherContainer {
+  display: flex;
+  flex-direction: row;
+}
+.weatherExtra {
+  padding: 25px;
+  width: 50%;
+}
+
+.weatherMain {
+  background-color: #91caff;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  :global {
+    .ant-typography {
+      font-weight: 600;
+      font-size: 48px;
+    }
+  }
+}

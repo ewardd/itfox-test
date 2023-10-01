@@ -1,15 +1,31 @@
 import React from "react";
-import { Layout } from "antd";
-import "./styles.scss";
+import { Button, Layout } from "antd";
+import styles from "./styles.module.scss";
+import { useAppDispatch, useAppSelector } from "../../Hooks/redux";
+import { setUnauthenticated } from "../../Redux/Auth/authSlice";
 
 export const BasicLayout: React.FC<React.PropsWithChildren> = ({
   children,
 }) => {
-  return (
-    <Layout className={"h-screen"}>
-      <Layout.Header>{/* TODO: slot for future nav menu */}</Layout.Header>
+  const dispatch = useAppDispatch();
 
-      <Layout.Content className={"content"}>{children}</Layout.Content>
+  const onClick = () => {
+    dispatch(setUnauthenticated());
+  };
+
+  const isAuthenticated = useAppSelector((store) => store.auth.isAuthenticated);
+
+  return (
+    <Layout>
+      <Layout.Header className={styles.header}>
+        {isAuthenticated && (
+          <Button onClick={onClick} className={styles.logoutButton}>
+            Logout
+          </Button>
+        )}
+      </Layout.Header>
+
+      <Layout.Content className={styles.content}>{children}</Layout.Content>
 
       <Layout.Footer>
         {/* TODO: slot for future footer content */}

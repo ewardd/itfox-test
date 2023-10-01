@@ -4,6 +4,7 @@ import { locationMenuItems } from "../../Constants";
 import { useAppDispatch, useAppSelector } from "../../Hooks/redux";
 import { isLocationEnum } from "../../Methods/isLocationEnum";
 import { getLocationCoordinatesThunk } from "../../Redux/Location/locationsSlice";
+import styles from "./styles.module.scss";
 
 export const LocationMenu: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -17,6 +18,7 @@ export const LocationMenu: React.FC = () => {
 
   return (
     <Menu
+      className={styles.locationMenu}
       items={locationMenuItems}
       selectedKeys={[selected]}
       onClick={onClick}

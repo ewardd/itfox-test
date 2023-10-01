@@ -1,19 +1,23 @@
 import { Button, Form, Input } from "antd";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../../Hooks/redux";
+import { setAuthenticated } from "../../Redux/Auth/authSlice";
 
 export const Login: React.FC = () => {
+  const dispatch = useAppDispatch();
   const validEmail = "test@test.org";
   const validPassword = "password";
 
   const navigate = useNavigate();
 
   const onFinish = (values: any) => {
+    dispatch(setAuthenticated());
     navigate("/dashboard");
   };
 
   const onFinishFailed = (errorInfo: any) => {
-    console.log("Failed:", errorInfo);
+    console.error("Failed:", errorInfo);
   };
 
   type FieldType = {
